@@ -1,6 +1,7 @@
 package net.avlanty.learningforge;
 
 import com.mojang.logging.LogUtils;
+import net.avlanty.learningforge.item.ModCreativeModTabs;
 import net.avlanty.learningforge.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,6 +30,7 @@ public class LearningForge
     public LearningForge(){
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
+        ModCreativeModTabs.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
